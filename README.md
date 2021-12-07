@@ -1,66 +1,84 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Comenzando **🚀**
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### **Pre-requisitos 📋**
 
-## About Laravel
+[Git](https://git-scm.com/)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+[Docker](https://www.docker.com/)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[VsCode](https://code.visualstudio.com/)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Plugins de VsCode 🤖
 
-## Learning Laravel
+[Container-Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### **Instalación 🔧**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clonaremos el proyecto en tu entorno local
 
-## Laravel Sponsors
+    ```bash
+    git clone https://github.com/cheems-dev/api.git
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2. Abriremos vscode
 
-### Premium Partners
+    ```bash
+    code api
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+    o también
 
-## Contributing
+    ```bash
+    cd api && code .
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. Abrir **_.devcontainer_**
 
-## Code of Conduct
+    1. Utiliza el atajo de teclado \*Ctrl+shitt+P y coloca en la barra **">Remote-Containers:">Remote-Containers:Reopen in Container"\***
+    2. Da click en
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+        ![Vscode](https://camo.githubusercontent.com/bf6e754a18e00e3fca1751c0ba01ad33d360fade6c3dc74e009e31d9c632fc14/68747470733a2f2f636f64652e76697375616c73747564696f2e636f6d2f6173736574732f626c6f67732f323031392f31302f30332f72656d6f74652d657874656e73696f6e2d636f6d6d616e64732e706e67)
 
-## Security Vulnerabilities
+        y selecciona la opcion **_"Reopen in Container"_**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. Añade .env a tu proyecto
+    ```bash
+    cp .env.example .env
+    ```
+5. Instalar dependencias
 
-## License
+    1. ```bash
+       composer install && composer migrate
+       ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6. Por ultimo, lanzamos el proyecto en entorno local. **_Happy coding_** 🍻
+
+    ```bash
+    ./vendor/bin/sail up
+    ```
+
+## **Construido con 🛠️**
+
+---
+
+-   Laravel
+-   Laravel Sail
+-   Docker
+
+## **Autores ✒️**
+
+---
+
+-   Luis Ccalluchi - _Documentación y desarrollo_ - [cheems-dev](https://github.com/cheems-dev)
+
+## **Licencia 📄**
+
+---
+
+Este proyecto está bajo la LICENCIA MIT
+
+## **Expresiones de Gratitud 🎁**
+
+-   Comenta a otros sobre este proyecto 📢
+-   Invita una cerveza 🍺 o un café ☕ a alguien del equipo.
+-   Da las gracias públicamente 🤓.
