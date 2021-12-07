@@ -37,7 +37,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = User::create($request->all());
-        return redirect()->route('users.show', $user);
+        return redirect()->route('clients.index');
     }
 
     /**
@@ -74,7 +74,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->update($request->all());
-        return redirect()->route('clients.show', $user);
+        return redirect()->route('clients.index');
     }
 
     /**
