@@ -1,116 +1,121 @@
-@extends('layouts.plantilla')
+<x-app-layout>
+  <x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+      {{ __('My Profile') }}
+    </h2>
+  </x-slot>
 
-@section('title', 'Actualizar Usuario')
+  <div class="py-12">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="p-6 bg-white border-b border-gray-200">
+          {{-- <x-validation-errors />
+          <x-success-message /> --}}
 
-@section('content')
-
-  <div class="flex justify-center items-center w-full py-12 bg-blue-100">
-    <div class="w-1/2 bg-white rounded shadow-2xl p-8 m-4">
-      <h1 class="block h-full text-center text-gray-800 text-2xl font-bold mb-6">Actualizar datos de usuario</h1>
-      <p class="text-red-600 flex justify-end"><a href="{{ route('clients.index') }}">Volver atras</a></p>
-
-      <form
-        action="{{ route('clients.update', $user) }}"
-        method="POST"
-      >
-        @csrf
-        @method('put')
-
-        <div class="flex flex-col mb-4">
-          <label
-            class="mb-2 font-bold text-lg text-gray-900"
-            for="name"
-          >Nombre</label>
-          <input
-            class="border py-2 px-3 text-grey-800"
-            type="text"
-            name="name"
-            id="name"
-            value="{{ old('name', $user->name) }}"
+          <form
+            method="POST"
+            action="{{ route('clients.update', $user) }}"
           >
-          @error('name')
-            <small>*{{ $message }}</small>
-          @enderror
+            @method('PUT')
+            @csrf
+            <div class="grid grid-cols-2 gap-6">
+              <div class="grid grid-rows-2 gap-6">
+                <div>
+                  <x-label
+                    for="name"
+                    :value="__('Name')"
+                  />
+                  <x-input
+                    id="name"
+                    class="block mt-1 w-full"
+                    type="text"
+                    name="name"
+                    value="{{ auth()->user()->name }}"
+                    autofocus
+                  />
+                </div>
+                <div>
+                  <x-label
+                    for="email"
+                    :value="__('Email')"
+                  />
+                  <x-input
+                    id="email"
+                    class="block mt-1 w-full"
+                    type="email"
+                    name="email"
+                    value="{{ auth()->user()->email }}"
+                    autofocus
+                  />
+                </div>
+              </div>
+              <div class="grid grid-rows-2 gap-6">
+                <div>
+                  <x-label
+                    for="name"
+                    :value="__('Name')"
+                  />
+                  <x-input
+                    id="name"
+                    class="block mt-1 w-full"
+                    type="text"
+                    name="name"
+                    value="{{ auth()->user()->phone }}"
+                    autofocus
+                  />
+                </div>
+                <div>
+                  <x-label
+                    for="email"
+                    :value="__('Email')"
+                  />
+                  <x-input
+                    id="email"
+                    class="block mt-1 w-full"
+                    type="email"
+                    name="email"
+                    value="{{ auth()->user()->address }}"
+                    autofocus
+                  />
+                </div>
+              </div>
+              <div class="grid grid-rows-2 gap-6">
+                <div>
+                  <x-label
+                    for="new_password"
+                    :value="__('New password')"
+                  />
+                  <x-input
+                    id="new_password"
+                    class="block mt-1 w-full"
+                    type="password"
+                    name="password"
+                    autocomplete="new-password"
+                  />
+                </div>
+                <div>
+                  <x-label
+                    for="confirm_password"
+                    :value="__('Confirm password')"
+                  />
+                  <x-input
+                    id="confirm_password"
+                    class="block mt-1 w-full"
+                    type="password"
+                    name="password_confirmation"
+                    autocomplete="confirm-password"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-end mt-4">
+              <x-button class="ml-3">
+                {{ __('Update') }}
+              </x-button>
+            </div>
+          </form>
         </div>
-
-        <div class="flex flex-col mb-4">
-          <label
-            class="mb-2 font-bold text-lg text-gray-900"
-            for="email"
-          >Email</label>
-          <input
-            class="border py-2 px-3 text-grey-800"
-            type="email"
-            name="email"
-            id="email"
-            value="{{ old('email', $user->name) }}"
-          >
-          @error('email')
-            <small>*{{ $message }}</small>
-          @enderror
-        </div>
-
-
-        <div class="flex flex-col mb-4">
-          <label
-            class="mb-2 font-bold text-lg text-gray-900"
-            for="password"
-          >Password:</label>
-          <input
-            class="border py-2 px-3 text-grey-800"
-            type="password"
-            name="password"
-            id="password"
-            value="{{ old('password', $user->password) }}"
-          >
-          @error('password')
-            <small>*{{ $message }}</small>
-          @enderror
-        </div>
-
-        <div class="flex flex-col mb-4">
-          <label
-            class="mb-2 font-bold text-lg text-gray-900"
-            for="phone"
-          >Telefono:</label>
-          <input
-            class="border py-2 px-3 text-grey-800"
-            type="text"
-            name="phone"
-            id="phone"
-            value="{{ old('phone', $user->phone) }}"
-          >
-          @error('categoria')
-            <small>*{{ $message }}</small>
-          @enderror
-        </div>
-
-        <div class="flex flex-col mb-4">
-          <label
-            class="mb-2 font-bold text-lg text-gray-900"
-            for="address"
-          >Direccion:</label>
-          <input
-            class="border py-2 px-3 text-grey-800"
-            type="text"
-            name="address"
-            id="address"
-            value="{{ old('address', $user->address) }}"
-          >
-          @error('address')
-            <small>*{{ $message }}</small>
-          @enderror
-        </div>
-
-        <div class="flex justify-center">
-          <button
-            class=" py-3 px-6 text-white rounded-lg bg-green-500 shadow-lg "
-            type="submit"
-          >
-            Guardar
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
-@endsection
+</x-app-layout>
