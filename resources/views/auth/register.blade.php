@@ -14,7 +14,7 @@
 
     <form
       method="POST"
-      action="{{ route('clients.store') }}"
+      action="{{ route('register') }}"
     >
       @csrf
 

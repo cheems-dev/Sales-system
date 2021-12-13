@@ -21,9 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::post('clients.store', [UserController::class, 'store'])->name('clients.store');
-
-Route::resource('clients', UserController::class);
 Route::group(
     ['middleware' => 'auth'],
     function () {
