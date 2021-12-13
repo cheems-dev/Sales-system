@@ -57,7 +57,7 @@
               <x-nav-link
                 :href="route('dashboard')"
                 :active="request()->routeIs('dashboard')"
-              >Dashboard</x-nav-link>
+              >Tienda Virtual</x-nav-link>
             @else
               <x-nav-link
                 :href="route('login')"
@@ -78,7 +78,7 @@
     </div>
   </body>
   <header class="relative flex items-center justify-center h-screen overflow-hidden">
-    <div class="relative z-30 p-5 text-2xl text-white bg-gray-300 bg-opacity-50 rounded-xl">
+    <div class="relative z-30 p-5 text-2xl text-white bg-gray-700 bg-opacity-50 rounded-xl">
       Bienvenido a Beba Armany
     </div>
     <video

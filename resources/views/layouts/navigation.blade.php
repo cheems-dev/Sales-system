@@ -15,12 +15,12 @@
 
         <!-- Navigation Links -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <
+          <x-nav-link
             :href="route('dashboard')"
             :active="request()->routeIs('dashboard')"
           >
-            {{ __('Mi cuenta') }}
-            </x-nav-link>
+            {{ __('Tienda Virtual') }}
+          </x-nav-link>
         </div>
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link
@@ -70,7 +70,7 @@
 
           <x-slot name="content">
             <x-dropdown-link :href="route('clients.edit', Auth::user())">
-              {{ __('My Profile') }}
+              {{ __('Mi perfil') }}
             </x-dropdown-link>
             <!-- Authentication -->
             <form
@@ -83,7 +83,7 @@
                 :href="route('logout')"
                 onclick="event.preventDefault();this.closest('form').submit();"
               >
-                {{ __('Log Out') }}
+                {{ __('Cerrar Sesión') }}
               </x-dropdown-link>
             </form>
           </x-slot>
