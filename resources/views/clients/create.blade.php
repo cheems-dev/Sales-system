@@ -1,9 +1,9 @@
-@extends('layouts.plantilla')
-
-@section('title', 'Create')
-
-@section('content')
-
+<x-app-layout>
+  <x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+      {{ __('Crear Cliente') }}
+    </h2>
+  </x-slot>
   <div class="flex justify-center items-center w-full py-2 bg-blue-100">
     <div class="w-1/2 bg-white rounded shadow-2xl p-8 m-4">
       <h1 class="block h-full text-center text-gray-800 text-2xl font-bold mb-6">Crear cliente</h1>
@@ -112,4 +112,4 @@
       </form>
     </div>
   </div>
-@endsection
+</x-app-layout>
