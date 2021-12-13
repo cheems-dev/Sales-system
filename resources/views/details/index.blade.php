@@ -1,14 +1,10 @@
-@extends('layouts.plantilla')
-
-@section('title', 'Facturas')
-
-@section('content')
-
-
+<x-app-layout>
+  <x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+      {{ __('Facturas') }}
+    </h2>
+  </x-slot>
   <div class=" max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-    <!-- Replace with your content -->
-    <h1 class="text-center text-4xl  mb-3">Facturas</h1>
-
     <div class=" py-5">
       <div class='overflow-x-auto w-full'>
         <table
@@ -48,5 +44,4 @@
     </div>
 
   </div>
-
-@endsection
+</x-app-layout>

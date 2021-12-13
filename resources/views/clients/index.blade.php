@@ -1,13 +1,10 @@
-@extends('layouts.plantilla')
-
-@section('title', 'Clientes')
-
-@section('content')
-
-
+<x-app-layout>
+  <x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+      {{ __('Clientes') }}
+    </h2>
+  </x-slot>
   <div class=" max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-    <!-- Replace with your content -->
-    <h1 class="text-center text-4xl  mb-3">Clientes</h1>
     <div class="flex justify-end">
       <a href="{{ route('clients.create') }}">
         <button class="py-1 px-6 text-white rounded-lg bg-green-500 shadow-lg block md:inline-block">
@@ -71,5 +68,4 @@
 
   </div>
 
-
-@endsection
+</x-app-layout>

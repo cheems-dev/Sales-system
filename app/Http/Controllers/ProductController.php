@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         $products = Product::orderBy('id', 'desc')->paginate(6);
 
-        return view('home', compact('products'));
+        return view('dashboard', compact('products'));
     }
 
     /**
@@ -38,7 +38,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = Product::create($request->all());
-        return redirect()->route('home', $product);
+        return redirect()->route('dashboard', $product);
     }
 
     /**
@@ -76,7 +76,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->update($request->all());
 
-        return redirect()->route('home', $product);
+        return redirect()->route('dashboard', $product);
     }
 
     /**
@@ -89,6 +89,6 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->delete();
-        return redirect()->route('home');
+        return redirect()->route('dashboard');
     }
 }

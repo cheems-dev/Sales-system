@@ -10,7 +10,7 @@
       <p class="text-red-600 flex justify-end"><a href="{{ route('clients.index') }}">Volver atras</a></p>
 
       <form
-        action="{{ route('clients.store') }}"
+        action="{{ route('clients.index') }}"
         method="POST"
       >
         @csrf
