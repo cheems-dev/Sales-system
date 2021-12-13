@@ -1,13 +1,13 @@
-@extends('layouts.plantilla')
-
-@section('title', 'Actualizar producto')
-
-@section('content')
-
+<x-app-layout>
+  <x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+      {{ __('Editar producto') }}
+    </h2>
+  </x-slot>
   <div class="flex justify-center items-center w-full py-20 bg-blue-100">
     <div class="w-1/2 bg-white rounded shadow-2xl p-8 m-4">
       <h1 class="block h-full text-center text-gray-800 text-2xl font-bold mb-6">Actualizar producto</h1>
-      <p class="text-red-600 flex justify-end"><a href="{{ route('home') }}">Volver atras</a></p>
+      <p class="text-red-600 flex justify-end"><a href="{{ route('dashboard') }}">Volver atras</a></p>
 
       <form
         action="{{ route('products.update', $product) }}"
@@ -107,4 +107,4 @@
       </form>
     </div>
   </div>
-@endsection
+</x-app-layout>

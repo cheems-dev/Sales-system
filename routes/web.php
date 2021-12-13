@@ -26,7 +26,6 @@ Route::group(
     function () {
         Route::get('/dashboard', [ProductController::class, 'index'])->name('dashboard');
         Route::resource('products', ProductController::class);
-
         Route::resource('clients', UserController::class);
         Route::resource('details', DetailController::class);
     }
