@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         Storage::makeDirectory('images');
         $this->call(UserSeeder::class);
         $this->call(ProductSeeder::class);
-        Sale::factory(30)->create();
-        Detail::factory(30)->create();
+        Sale::factory(40)->create();
+        Detail::factory(40)->create();
     }
 }
