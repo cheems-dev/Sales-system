@@ -14,8 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('id', 'desc')->paginate(8);
-        return view('clients.index', compact('users'));
+        $users = User::orderBy('id', 'desc')->paginate(6);
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
+        return view('admin.users.create');
     }
 
     /**
@@ -36,19 +36,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:8',
+            'phone' => 'required|max:9',
+            'address' => 'required',
+        ]);
         $user = User::create($request->all());
-        return redirect()->route('clients.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        return view('clients.show', compact('user'));
+        return redirect()->route('admin.users.index')->with('info', 'Cliente creado correctamente');
     }
 
     /**
@@ -57,10 +53,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        $user = User::find($id);
-        return view('clients.edit', compact('user'));
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -70,11 +65,17 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        $user = User::find($id);
+        $request->validate([
+            'name' => 'required',
+            'email' => "required|unique:users,email,$user->id",
+            'password' => 'required|min:8',
+            'phone' => 'required|max:9',
+            'address' => 'required',
+        ]);
         $user->update($request->all());
-        return redirect()->route('clients.index');
+        return redirect()->route('admin.users.index')->with('info', 'Cliente actualizado correctamente');
     }
 
     /**
@@ -87,6 +88,6 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect()->route('clients.index');
+        return redirect()->route('admin.users.index')->with('info', 'Cliente eliminado correctamente');
     }
 }

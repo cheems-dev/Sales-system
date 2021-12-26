@@ -24,18 +24,10 @@
         </div>
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link
-            :href="route('clients.index')"
-            :active="request()->routeIs('clients.index')"
-          >
-            {{ __('Clientes') }}
-          </x-nav-link>
-        </div>
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link
             :href="route('details.index')"
             :active="request()->routeIs('details.index')"
           >
-            {{ __('Facturas') }}
+            {{ __('Mis facturas') }}
           </x-nav-link>
         </div>
       </div>
@@ -71,6 +63,10 @@
           <x-slot name="content">
             <x-dropdown-link :href="route('clients.edit', Auth::user())">
               {{ __('Mi perfil') }}
+            </x-dropdown-link>
+
+            <x-dropdown-link :href="route('admin.home')">
+                {{ __('Panel de administracion') }}
             </x-dropdown-link>
             <!-- Authentication -->
             <form

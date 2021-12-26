@@ -11,18 +11,26 @@ class Product extends Model
 
     protected $fillable = [
         'name',
+        'slug',
         'brand',
+        'body',
         'stock',
+        'extract',
         'price',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     public function details()
     {
         return $this->hasMany(Detail::class);
     }
 
-    public function images()
+    public function image()
     {
-        return $this->hasMany(Image::class);
+        return $this->morphOne(Image::class, 'imageable');
     }
 }

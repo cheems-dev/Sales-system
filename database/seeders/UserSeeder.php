@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('12345678'),
         ]);
 
-        User::factory(30)->create()->each(function (User $user) {
+        User::factory(10)->create()->each(function (User $user) {
             Image::factory(1)->create([
                 'imageable_id' => $user->id,
                 'imageable_type' => User::class
