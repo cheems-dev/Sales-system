@@ -3,7 +3,7 @@
 @section('title', 'Crear un nuevo un usuario')
 
 @section('content_header')
-<h1>Crear categoría</h1>
+<h1>Crear cliente</h1>
 @stop
 
 @section('content')
@@ -53,7 +53,7 @@
                 <span class="text-danger">{{$message}}</span>
                 @enderror
             </div>
-        {!! Form::submit('Crear Categoría', ['class'=> 'btn btn-success']) !!}
+        {!! Form::submit('Crear cliente', ['class'=> 'btn btn-success']) !!}
         {!!Form::close([]) !!}
     </div>
 </div>
