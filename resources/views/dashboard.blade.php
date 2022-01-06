@@ -20,7 +20,7 @@
                                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg></button>
                             </div>
-                            <img src="{{ Storage::url($product->image->url) }}" class=" w-full   object-fill object-center  rounded-2xl">
+                            <img src="@if($product->image) {{Storage::url($product->image->url)}} @else  https://media.istockphoto.com/photos/a-small-dog-and-a-kitten-sleep-at-home-picture-id1265884839?b=1&k=20&m=1265884839&s=170667a&w=0&h=_YdS6fYeJbghZJY4wkqd6wc68yfkYfUZKnnzOjFGIB0= @endif" class=" w-full   object-fill object-center  rounded-2xl">
                         </div>
                         <div class="flex-auto justify-evenly">
                             <div class="flex flex-wrap ">
